@@ -25,3 +25,8 @@ from movies as m
 GROUP BY m.year
 ORDER BY count(m.year) DESC
 limit 1;
+
+SELECT m.name, string_agg(mg.genre, ', ') as genres
+from movies_genres as mg 
+JOIN movies as m ON m.id = mg.movie_id
+GROUP BY m.name;
