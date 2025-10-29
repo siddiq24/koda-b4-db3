@@ -11,3 +11,11 @@ from (
     GROUP BY a.first_name, a.last_name
 ) as p
 WHERE roles > 5;
+
+
+SELECT concat(d.first_name, ' ', d.last_name ) as "director_name", COUNT(md.movie_id) as movies
+FROM directors as d
+JOIN movies_directors as md on md.director_id = d.id
+GROUP BY d.first_name, d.last_name
+ORDER BY movies desc
+limit 1;
