@@ -38,10 +38,10 @@
             role varchar(100)
         }
 
-        directors ||--o{ directors_genres : ""
-        movies ||--o{ movies_directors : ""
-        directors ||--o{ movies_directors : ""
-        movies ||--o{ movies_genres : ""
-        actors ||--o{ roles : ""
-        movies ||--o{ roles : ""
+        directors ||--o{ directors_genres : "A director can have multiple genres"
+        movies ||--o{ movies_directors : "A movie can have multiple directors"
+        directors ||--o{ movies_directors : "A director can direct multiple movies"
+        movies ||--o{ movies_genres : "A movie can have multiple genres"
+        actors ||--o{ roles : "An actor can play multiple roles"
+        movies ||--o{ roles : "A movie can have multiple actors in roles"
 ```
