@@ -19,3 +19,9 @@ JOIN movies_directors as md on md.director_id = d.id
 GROUP BY d.first_name, d.last_name
 ORDER BY movies desc
 limit 1;
+
+SELECT m.year, count(m.year) 
+from movies as m
+GROUP BY m.year
+ORDER BY count(m.year) DESC
+limit 1;
